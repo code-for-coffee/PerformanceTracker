@@ -116,7 +116,7 @@
     <Compile Include="Models\AssignmentModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Controllers\AssignmentController.cs" />
-    <Compile Include="Models\ActiveRecordModel.cs" />
+    <Compile Include="Models\IDefaultModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />

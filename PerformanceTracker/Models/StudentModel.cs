@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using PerformanceTracker.Models;
 namespace PerformanceTracker
 {
-	public class StudentModel
+	public class StudentModel : IDefaultModel<StudentModel>
 	{
 		public StudentModel()
 		{
@@ -9,7 +11,32 @@ namespace PerformanceTracker
 		public string name { get; set; }
 		public string avatarUrl { get; set; }
 		public string group { get; set; }
-		public string
+		public double gpa { get; set; }
+
+		public IEnumerable<StudentModel> all()
+		{
+			return new List<StudentModel>();
+		}
+
+		public StudentModel find(String id)
+		{
+			return new StudentModel();
+		}
+
+		public StudentModel create()
+		{
+			return new StudentModel();
+		}
+
+		public Boolean update(KeyValuePair<String, Object> values)
+		{
+			return false;
+		}
+
+		public Boolean remove(string id)
+		{
+			return false;
+		}
 	}
 }
 
