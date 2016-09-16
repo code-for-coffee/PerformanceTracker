@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -113,7 +113,8 @@
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Models\AssignmentModel.cs" />
+    <Compile Include="Models\Assignment.cs" />
+    <Compile Include="Models\FirebaseManager.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Controllers\AssignmentController.cs" />
     <Compile Include="Models\IDefaultModel.cs" />
