@@ -8,8 +8,8 @@ namespace PerformanceTracker.Models
 	{
 		IEnumerable<T> all();
 		T find(string id);
-		T create();
-		Boolean update(KeyValuePair<String, Object> values);
+		T create(Dictionary<String, object> values);
+		Boolean update(Dictionary<String, object> values);
 		Boolean remove(string id);
 	}
 }

@@ -12,6 +12,7 @@ namespace PerformanceTracker.Controllers
         public ActionResult Index()
         {
 			List<Assignment> assignments = new List<Assignment>();
+
             return View ();
         }
 

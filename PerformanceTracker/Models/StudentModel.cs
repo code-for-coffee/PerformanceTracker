@@ -23,12 +23,12 @@ namespace PerformanceTracker
 			return new StudentModel();
 		}
 
-		public StudentModel create()
+		public StudentModel create(Dictionary<String, object> values)
 		{
 			return new StudentModel();
 		}
 
-		public Boolean update(KeyValuePair<String, Object> values)
+		public Boolean update(Dictionary<String, Object> values)
 		{
 			return false;
 		}

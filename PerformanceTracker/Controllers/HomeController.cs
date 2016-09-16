@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using PerformanceTracker.Models;
 
 namespace PerformanceTracker.Controllers
 {
@@ -16,6 +17,9 @@ namespace PerformanceTracker.Controllers
 
 			ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
 			ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+
+		    Assignment test = new Assignment();
+		    test.create(new Dictionary<string, object>());
 
 			return View();
 		}

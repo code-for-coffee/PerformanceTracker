@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using FireSharp.Response;
 using PerformanceTracker.Models;
 
 namespace PerformanceTracker.Models
@@ -30,6 +32,7 @@ namespace PerformanceTracker.Models
 			testing,
 			passed
 		}
+	    private FirebaseManager _firebaseManager = new FirebaseManager();
 		public string name { get; set; }
 		public string description { get; set; }
 		public double maxPossibleScore { get; set; }
@@ -46,12 +49,28 @@ namespace PerformanceTracker.Models
 			return new Assignment();
 		}
 
-		public Assignment create()
+		public async Task<Assignment> create(Dictionary<String, object> values)
 		{
-			return new Assignment();
+		    var assignment = new Assignment();
+		    if (values != null)
+		    {
+		        if (values.ContainsKey("name"))
+		            assignment.name = values["name"].ToString();
+		        if (values.ContainsKey("description"))
+		            assignment.description = values["description"].ToString();
+		        if (values.ContainsKey("maxPossibleScore"))
+		            assignment.maxPossibleScore = double.Parse(values["maxPossibleScore"].ToString());
+		        if (values.ContainsKey("score"))
+		            assignment.score = double.Parse(values["score"].ToString());
+		        if (values.ContainsKey("status"))
+		            assignment.status = values["status"].ToString();
+		        SetResponse response = await _firebaseManager.db().SetAsync("assignments/set", assignment);
+		        Assignment result = response.ResultAs<Assignment>();
+		    }
+			return assignment;
 		}
 
-		public Boolean update(KeyValuePair<String, Object> values)
+		public Boolean update(Dictionary<String, Object> values)
 		{
 			return false;
 		}
