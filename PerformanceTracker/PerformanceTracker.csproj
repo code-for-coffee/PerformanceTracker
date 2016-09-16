@@ -115,6 +115,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Models\AssignmentModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
+    <Compile Include="Controllers\AssignmentController.cs" />
+    <Compile Include="Models\ActiveRecordModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
